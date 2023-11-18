@@ -26,4 +26,6 @@
 nav li {
     padding-left: 5%;
 }
-.header-img
+.header-img{
+    width: 40%;
+}
