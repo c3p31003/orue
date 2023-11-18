@@ -38,48 +38,41 @@
         
     </header>
     <main>
-        <div class="intro">
-            <img src="attachment5.png" class="img-fluid rounded" alt="">
+      <div class="row px-3">
+        <table class="table">
+          <thead><tr><th>ユーザ名</th><th>企画案</th></tr></thead>
+          <tbody id="review_list"></tbody>
+        </table>
+      </div>
+      <div class="m-5 form-group">
+        <h3>企画名</h3><br />
+        <div class="input-group">
+          <form method="POST" action="">
+            ユーザ名：<input class="form-control input-lg" type="text" size="30" name="user_name" required><br />
+            
+            評価コメント：<br />
+            <textarea class="form-control" name="review_text" cols="50" rows="5"></textarea><br />
+            <input class="form-control" type="submit" value="送信">
+          </form>
         </div>
-        <div class="container my-5">
-            <div class="row">
-                <div class="col-md-6 mx-auto mx-2 mt-3">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <img src="attachment.png" class="img-fluid rounded" alt="...">
-                                </div>
-                                <a href="intro1.html" class="btn btn-warning mt-1">
-                                    <span class="text">こちらから</span>
-                                </a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="col-md-6 mx-auto mx-2 mt-3">
-                    <div class="card mb-4 shadow-sm">
-                        <div class="card-body">
-                            <div class="row g-0">
-                                <div class="col-md-12">
-                                    <img src="attachment2.png" class="img-fluid rounded" alt="...">
-                                </div>
-                                <a href="intro2.html" class="btn btn-primary mt-1">
-                                    <span class="text">こちらから</span>
-                                </a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-         
-
-                
+      </div>
+      <script>
+        window.onload = function onLoad() {
+            
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); 
+            let userName = form.querySelector("input[name='user_name']").value;
+            let reviewText = form.querySelector("textarea[name='review_text']").value;
+            let tableBody = document.getElementById("review_list");
+            let newRow = document.createElement("tr");
+            newRow.innerHTML = `<td>${userName}</td><td>${reviewText}</td>`;
+            tableBody.appendChild(newRow);
+            form.reset();
+        });
+    }
+        
+      </script>
     </main>
     <footer></footer>    
 </body>

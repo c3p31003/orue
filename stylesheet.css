@@ -10,3 +10,16 @@
 .bg-dark {
     background-color: #FCB32A !important;
 }
+/* トップページ */
+.intro img{
+    width: 100%;
+}
+.text {
+    color: white;
+    font-weight: bold;
+}
+/* form */
+.formtext {
+    font-size: medium;
+    font-weight: bold;
+}
