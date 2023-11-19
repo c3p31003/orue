@@ -10,6 +10,7 @@
 .bg-dark {
     background-color: #FCB32A !important;
 }
+
 /* トップページ */
 .intro img{
     width: 100%;
@@ -19,7 +20,9 @@
     font-weight: bold;
 }
 /* 紹介ページ */
-
+.img-intro {
+    max-width: 60% !important;
+}
 /* form */
 .formtext {
     font-size: medium;
